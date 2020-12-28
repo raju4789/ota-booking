@@ -2,3 +2,29 @@
 20/12/26 11:28:38 INFO booking.BookingApplication: Booking service started running at port : 8081
 20/12/26 11:31:11 INFO booking.BookingApplication: Booking service started running at port : 8081
 20/12/26 11:32:03 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/26 14:35:04 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/26 15:01:02 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/26 15:01:17 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/26 15:08:53 INFO handlers.CreateBookingsHandler: CreateBookingsHandler called with : 
+20/12/26 15:35:52 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/26 15:36:10 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/26 15:36:26 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/26 15:36:35 INFO handlers.CreateBookingsHandler: CreateBookingsHandler called with : 
+20/12/27 15:59:31 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 16:00:09 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 16:03:01 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 16:44:10 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 16:57:06 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 16:57:14 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/27 17:00:20 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 17:00:24 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/27 17:00:24 ERROR handlers.CreateBookingsHandler: Cannot construct instance of `java.time.LocalDateTime` (no Creators, like default construct, exist): no String-argument constructor/factory method to deserialize from String value ('2020-12-29T15:08:00.630642')
+ at [Source: UNKNOWN; line: -1, column: -1] (through reference chain: com.ogado.booking.models.BookingInfo["checkInDate"])
+20/12/27 17:02:32 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 17:02:38 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/27 17:02:38 ERROR handlers.CreateBookingsHandler: Cannot construct instance of `java.time.LocalDateTime` (no Creators, like default construct, exist): no String-argument constructor/factory method to deserialize from String value ('2021-01-19T15:08:00.630642')
+ at [Source: UNKNOWN; line: -1, column: -1] (through reference chain: com.ogado.booking.models.BookingInfo["checkInDate"])
+20/12/27 17:03:43 INFO booking.BookingApplication: Booking service started running at port : 8081
+20/12/27 17:03:49 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/27 17:03:49 INFO handlers.CreateBookingsHandler: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null]
+20/12/28 09:27:46 INFO server.ServerConnectionManager: booking service started running at port : 8081

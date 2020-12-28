@@ -5,11 +5,11 @@ import java.net.InetSocketAddress;
 
 import org.apache.log4j.Logger;
 
+import com.ogado.booking.constants.ApplicationConstants;
 import com.ogado.booking.exceptions.ConfigurationException;
 import com.ogado.booking.handlers.CreateBookingsHandler;
 import com.ogado.booking.handlers.FilterBookingsHandler;
 import com.ogado.booking.handlers.UpdateBookingsHandler;
-import com.ogado.booking.utils.ApplicationConstants;
 import com.ogado.booking.utils.ConfigLoader;
 import com.sun.net.httpserver.HttpServer;
 

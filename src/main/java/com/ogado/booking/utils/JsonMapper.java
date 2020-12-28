@@ -21,26 +21,13 @@ public class JsonMapper {
 
 	}
 
-	public static JsonNode parse(String jsonSrc) throws IOException {
-		return jsonMapper.readTree(jsonSrc);
-	}
-
-	public static <A> A fromJson(JsonNode jsonNode, Class<A> cls) throws JsonProcessingException {
+	public static <A> A parse(String jsonSrc, Class<A> cls) throws IOException {
+		JsonNode jsonNode = jsonMapper.readTree(jsonSrc);
 		return jsonMapper.treeToValue(jsonNode, cls);
 	}
 
-	public static JsonNode toJson(Object obj) {
-		return jsonMapper.valueToTree(obj);
-	}
-
-	public static String stringify(JsonNode jsonNode) throws JsonProcessingException {
-
-		return generateJson(jsonNode, false);
-
-	}
-
-	public static String stringifyPretty(JsonNode jsonNode) throws JsonProcessingException {
-
+	public static String stringifyPretty(Object obj) throws JsonProcessingException {
+		JsonNode jsonNode = jsonMapper.valueToTree(obj);;
 		return generateJson(jsonNode, true);
 
 	}

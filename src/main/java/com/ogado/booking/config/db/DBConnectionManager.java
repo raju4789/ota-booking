@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
+import com.ogado.booking.constants.ApplicationConstants;
 import com.ogado.booking.exceptions.ConfigurationException;
-import com.ogado.booking.utils.ApplicationConstants;
 import com.ogado.booking.utils.ConfigLoader;
 
 public class DBConnectionManager {

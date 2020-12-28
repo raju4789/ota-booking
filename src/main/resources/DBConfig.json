@@ -1,6 +1,6 @@
 {
-	"driverName": "com.mysql.jdbc.Driver",
+	"driverName": "com.mysql.cj.jdbc.Driver",
 	"url": "jdbc:mysql://localhost:3306/ogado",
 	"username": "root",
-	"password": ""
+	"password": "Raju@4789"
 }

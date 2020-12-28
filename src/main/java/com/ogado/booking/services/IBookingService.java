@@ -1,15 +1,17 @@
 package com.ogado.booking.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.ogado.booking.models.BookingInfo;
+import com.ogado.booking.models.BookingResponse;
 
 public interface IBookingService {
 	
-	public String createBooking(BookingInfo bookingInfo);
+	public BookingResponse createBooking(BookingInfo bookingInfo) throws SQLException;
 	
 	public List<BookingInfo> filterBookings(String checkInDate, String checkOutDate, String status);
 	
-	public void amendBooking(BookingInfo bookingInfo);
+	public void amendBooking(List<BookingInfo> bookingInfo);
 
 }

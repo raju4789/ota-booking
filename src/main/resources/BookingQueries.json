@@ -1,0 +1,8 @@
+{
+	"createBookingTable" : "CREATE TABLE IF NOT EXISTS bookings (bookingId VARCHAR(50) not NULL, checkInDate VARCHAR(255), checkOutDate VARCHAR(255), hotelName VARCHAR(50), noOfGuests INTEGER, bookingReference VARCHAR(50), PRIMARY KEY ( bookingId ))",
+	"insertBooking": "INSERT INTO bookings(bookingId, checkInDate, checkOutDate, hotelName, noOfGuests) VALUES(?,?,?,?,?)",
+	"updateBooking":"",
+	"selectBooking": "SELECT * FROM bookings WHERE bookingId = ?",
+	"filterBookings": ""
+}
+

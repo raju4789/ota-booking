@@ -28,3 +28,70 @@
 20/12/27 17:03:49 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
 20/12/27 17:03:49 INFO handlers.CreateBookingsHandler: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null]
 20/12/28 09:27:46 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 14:53:32 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 14:53:41 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 14:53:42 ERROR db.DBConnectionManager: Failed to connect to db : Access denied for user 'root'@'localhost' (using password: NO)
+20/12/28 15:04:24 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 15:04:27 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 15:05:28 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 15:05:32 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 15:34:50 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 15:34:55 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 15:36:53 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 15:37:04 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:14:24 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:14:29 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:15:42 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:15:49 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:18:46 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:18:51 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:21:17 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:21:23 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:22:32 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:22:35 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:23:18 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:23:32 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:24:08 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:24:11 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:24:24 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:24:45 ERROR server.ServerConnectionManager: failed to start server : Address already in use
+20/12/28 16:24:49 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:25:22 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:25:25 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:28:34 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:28:38 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:36:23 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:36:32 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:37:31 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:37:45 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:45:21 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:45:24 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:45:55 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:46:01 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:46:24 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:46:29 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:47:58 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:48:04 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:48:05 ERROR handlers.CreateBookingsHandler: No value specified for parameter 4
+20/12/28 16:48:26 ERROR server.ServerConnectionManager: failed to start server : Address already in use
+20/12/28 16:48:35 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:48:41 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:48:41 ERROR handlers.CreateBookingsHandler: Table 'ogado.booking' doesn't exist
+20/12/28 16:49:31 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:49:34 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:49:34 ERROR handlers.CreateBookingsHandler: Data truncation: Data too long for column 'bookingId' at row 1
+20/12/28 16:50:17 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:50:21 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:50:22 ERROR handlers.CreateBookingsHandler: Data truncation: Data too long for column 'bookingId' at row 1
+20/12/28 16:51:33 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 16:51:38 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 16:51:39 INFO dao.BookingDAO: 1
+20/12/28 19:31:11 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 19:31:18 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 19:31:19 ERROR handlers.CreateBookingsHandler: Operation not allowed after ResultSet closed
+20/12/28 19:32:54 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 19:33:01 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 19:33:01 INFO dao.BookingDAO: Succesfully created booking
+20/12/28 19:37:47 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 19:37:53 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
+20/12/28 19:37:54 INFO dao.BookingDAO: Succesfully created booking

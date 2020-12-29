@@ -1,6 +1,6 @@
 package com.ogado.booking;
 
-import com.ogado.booking.config.server.ServerConnectionManager;
+import com.ogado.booking.server.ServerConnectionManager;
 
 public class BookingApplication {
 

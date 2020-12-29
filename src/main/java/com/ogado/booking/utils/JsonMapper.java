@@ -1,6 +1,8 @@
 package com.ogado.booking.utils;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -8,6 +10,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.type.CollectionType;
 
 public class JsonMapper {
 
@@ -26,8 +29,17 @@ public class JsonMapper {
 		return jsonMapper.treeToValue(jsonNode, cls);
 	}
 
+	public static <A> List<A> parseList(InputStream inputStream, Class<A> cls) throws IOException {
+
+		CollectionType collectionType = jsonMapper.getTypeFactory().constructCollectionType(List.class, cls);
+
+		return jsonMapper.readValue(inputStream, collectionType);
+
+	}
+
 	public static String stringifyPretty(Object obj) throws JsonProcessingException {
-		JsonNode jsonNode = jsonMapper.valueToTree(obj);;
+		JsonNode jsonNode = jsonMapper.valueToTree(obj);
+		;
 		return generateJson(jsonNode, true);
 
 	}

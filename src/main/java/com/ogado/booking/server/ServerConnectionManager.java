@@ -1,4 +1,4 @@
-package com.ogado.booking.config.server;
+package com.ogado.booking.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -18,12 +18,11 @@ public class ServerConnectionManager {
 	private static Logger log = Logger.getLogger(ServerConnectionManager.class);
 
 	public static void startServer(){
-		HttpServer httpServer = null;
 		try {
 			ServerConfiguration serverConfiguration = ConfigLoader
 					.loadConfiguration(ApplicationConstants.SERVER_CONFIG_FILE, ServerConfiguration.class);
 			
-			httpServer = HttpServer.create(new InetSocketAddress(serverConfiguration.getPort()), 0);
+			HttpServer httpServer = HttpServer.create(new InetSocketAddress(serverConfiguration.getPort()), 0);
 
 			httpServer.createContext(ApplicationConstants.CREATE_URI, new CreateBookingsHandler());
 			httpServer.createContext(ApplicationConstants.BOOKINGS_URI, new FilterBookingsHandler());

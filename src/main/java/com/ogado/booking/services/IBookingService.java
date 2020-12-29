@@ -8,7 +8,7 @@ import com.ogado.booking.models.BookingResponse;
 
 public interface IBookingService {
 	
-	public BookingResponse createBooking(BookingInfo bookingInfo) throws SQLException;
+	public BookingResponse createBooking(BookingInfo bookingInfo) throws SQLException, Exception;
 	
 	public List<BookingInfo> filterBookings(String checkInDate, String checkOutDate, String status);
 	

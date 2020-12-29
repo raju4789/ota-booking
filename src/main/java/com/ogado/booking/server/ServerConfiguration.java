@@ -1,4 +1,4 @@
-package com.ogado.booking.config.server;
+package com.ogado.booking.server;
 
 public class ServerConfiguration {
 	private int port;

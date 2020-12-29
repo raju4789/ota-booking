@@ -95,3 +95,5 @@
 20/12/28 19:37:47 INFO server.ServerConnectionManager: booking service started running at port : 8081
 20/12/28 19:37:53 INFO handlers.CreateBookingsHandler: Inside CreateBookingsHandler.
 20/12/28 19:37:54 INFO dao.BookingDAO: Succesfully created booking
+20/12/28 21:16:47 INFO server.ServerConnectionManager: booking service started running at port : 8081
+20/12/28 21:16:52 INFO handlers.UpdateBookingsHandler: UpdateBookingsHandler called with request: [BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null], BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null]]

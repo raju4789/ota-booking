@@ -1,11 +1,9 @@
 package com.ogado.booking.handlers;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -27,13 +25,13 @@ public class UpdateBookingsHandler implements HttpHandler {
 		BookingResponse bookingResponse = null;
 		try {
 			IBookingService bookingService = new BookingService();
-			BookingInfo bookingInfo = getRequestObject(httpExchange.getRequestBody());
+			List<BookingInfo> bookings = JsonMapper.parseList(httpExchange.getRequestBody(), BookingInfo.class);
 			
-			log.info("createBookingsHandler called with request: "+ bookingInfo);
+			log.info("UpdateBookingsHandler called with request: "+ bookings);
 
-			bookingResponse = bookingService.createBooking(bookingInfo);
+			//bookingService.amendBooking(bookings);
 		} catch (IOException | ConfigurationException | SQLException e) {
-			log.error("failed to create booking: "+ e.getMessage());
+			log.error("failed to update bookings: "+ e.getMessage());
 
 			bookingResponse = new BookingResponse();
 			bookingResponse.setHttpStatus(HTTPStatus.INTERNAL_SERVER_ERROR);
@@ -54,18 +52,6 @@ public class UpdateBookingsHandler implements HttpHandler {
 		}
 	}
 	
-	private BookingInfo getRequestObject(InputStream inputStream) throws IOException {
-
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-		StringBuffer sb = new StringBuffer();
-		String line;
-		while ((line = bufferedReader.readLine()) != null) {
-			sb.append(line);
-		}
-
-		return JsonMapper.parse(sb.toString(), BookingInfo.class);
-
-	}
-
+	
 
 }

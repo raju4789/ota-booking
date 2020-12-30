@@ -16,21 +16,32 @@ import com.sun.net.httpserver.HttpServer;
 public class ServerConnectionManager {
 
 	private static Logger log = Logger.getLogger(ServerConnectionManager.class);
+	private static HttpServer httpServer;
+	
+	private static HttpServer getHttpServer() throws ConfigurationException, IOException {
+		if(httpServer == null) {
+			ServerConfiguration serverConfiguration = ConfigLoader
+					.loadConfiguration(ApplicationConstants.SERVER_CONFIG_FILE, ServerConfiguration.class);
+			httpServer = HttpServer.create(new InetSocketAddress(serverConfiguration.getPort()), 0);
+
+		}
+		
+		return httpServer;
+	}
 
 	public static void startServer(){
 		try {
-			ServerConfiguration serverConfiguration = ConfigLoader
-					.loadConfiguration(ApplicationConstants.SERVER_CONFIG_FILE, ServerConfiguration.class);
 			
-			HttpServer httpServer = HttpServer.create(new InetSocketAddress(serverConfiguration.getPort()), 0);
+			getHttpServer().createContext(ApplicationConstants.BOOKINGS_URI, new FilterBookingsHandler());
+			getHttpServer().createContext(ApplicationConstants.AMEND_URI, new UpdateBookingsHandler());
+			getHttpServer().createContext(ApplicationConstants.CREATE_URI, new CreateBookingsHandler());
 
-			httpServer.createContext(ApplicationConstants.CREATE_URI, new CreateBookingsHandler());
-			httpServer.createContext(ApplicationConstants.BOOKINGS_URI, new FilterBookingsHandler());
-			httpServer.createContext(ApplicationConstants.AMEND_URI, new UpdateBookingsHandler());
 
-			httpServer.start();
+			getHttpServer().start();
 			
-			log.info("booking service started running at port : " + serverConfiguration.getPort());
+			String[] temp = httpServer.getAddress().toString().split(":");
+			String portNumber = temp[temp.length-1];
+			log.info("supplier service started running at port : " + portNumber);
 
 		} catch (ConfigurationException | IOException e) {
 			log.error("failed to start server : " + e.getMessage());
@@ -39,3 +50,4 @@ public class ServerConnectionManager {
 	}
 
 }
+

@@ -10,7 +10,7 @@ public interface IBookingService {
 	
 	public BookingResponse createBooking(BookingInfo bookingInfo) throws SQLException, Exception;
 	
-	public List<BookingInfo> filterBookings(String checkInDate, String checkOutDate, String status);
+	public List<BookingInfo> filterBookings(String checkInDate, String checkOutDate, String status) throws SQLException;
 	
 	public void amendBooking(List<BookingInfo> bookingInfo);
 

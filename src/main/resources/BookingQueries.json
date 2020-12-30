@@ -1,8 +1,8 @@
 {
-	"createBookingTable" : "CREATE TABLE IF NOT EXISTS bookings (bookingId VARCHAR(50) not NULL, checkInDate VARCHAR(255), checkOutDate VARCHAR(255), hotelName VARCHAR(50), noOfGuests INTEGER, bookingReference VARCHAR(50), PRIMARY KEY ( bookingId ))",
-	"insertBooking": "INSERT INTO bookings(bookingId, checkInDate, checkOutDate, hotelName, noOfGuests) VALUES(?,?,?,?,?)",
+	"createBookingTable" : "CREATE TABLE IF NOT EXISTS ogado_bookings (booking_id VARCHAR(50) NOT NULL, check_in_date DATETIME, check_out_date DATETIME, hotel_name VARCHAR(50), no_of_guests INTEGER, status VARCHAR(10), booking_reference VARCHAR(50), created_on DATETIME, updated_on DATETIME, PRIMARY KEY ( booking_id ))",
+	"insertBooking": "INSERT INTO ogado_bookings(booking_id, check_in_date, check_out_date, hotel_name, no_of_guests, status, booking_reference, created_on, updated_on) VALUES(?,?,?,?,?,?,?,?,?)",
 	"updateBooking":"",
-	"selectBooking": "SELECT * FROM bookings WHERE bookingId = ?",
-	"filterBookings": ""
+	"selectBooking": "SELECT * FROM ogado_bookings WHERE booking_id = ?",
+	"filterBookings": "SELECT * FROM ogado_bookings WHERE 1 = 1"
 }
 

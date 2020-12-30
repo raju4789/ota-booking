@@ -15,5 +15,8 @@ public class ApplicationConstants {
 	public static final String AMEND_URI = "/booking/v1/amend";
 	
 	public static final String SUPPLIER_BOOKING_URI = "http://localhost:8082/supplier/v1/book";	
+	
+	public static final String STATUS_CONFIRMED  = "CONFIRMED";
+	public static final String STATUS_CANCELED  = "CANCELED";
 
 }

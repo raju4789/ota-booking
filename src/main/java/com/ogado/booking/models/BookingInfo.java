@@ -1,26 +1,52 @@
 package com.ogado.booking.models;
 
 public class BookingInfo {
-	
+
 	private String bookingId;
-	
+
 	private String checkInDate;
 	private String checkOutDate;
-	
+
 	private String hotelName;
 	private int noOfGuests;
-	
+
 	private String status;
 	private String bookingReference;
-	
-	public BookingInfo() {}
-	
-	public BookingInfo(String checkInDate, String checkOutDate, String hotelName, int noOfGuests) {
+
+	private String createdOn;
+	private String updatedOn;
+
+	public BookingInfo() {
+	}
+
+	public BookingInfo(String bookingId, String checkInDate, String checkOutDate, String hotelName, int noOfGuests,
+			String status, String bookingReference, String createdOn, String updatedOn) {
 		super();
+		this.bookingId = bookingId;
 		this.checkInDate = checkInDate;
 		this.checkOutDate = checkOutDate;
 		this.hotelName = hotelName;
 		this.noOfGuests = noOfGuests;
+		this.status = status;
+		this.bookingReference = bookingReference;
+		this.createdOn = createdOn;
+		this.updatedOn = updatedOn;
+	}
+
+	public String getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(String createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public String getUpdatedOn() {
+		return updatedOn;
+	}
+
+	public void setUpdatedOn(String updatedOn) {
+		this.updatedOn = updatedOn;
 	}
 
 	public String getBookingId() {
@@ -83,7 +109,8 @@ public class BookingInfo {
 	public String toString() {
 		return "BookingInfo [bookingId=" + bookingId + ", checkInDate=" + checkInDate + ", checkOutDate=" + checkOutDate
 				+ ", hotelName=" + hotelName + ", noOfGuests=" + noOfGuests + ", status=" + status
-				+ ", bookingReference=" + bookingReference + "]";
+				+ ", bookingReference=" + bookingReference + ", createdOn=" + createdOn + ", updatedOn=" + updatedOn
+				+ "]";
 	}
-	
+
 }

@@ -97,3 +97,100 @@
 20/12/28 19:37:54 INFO dao.BookingDAO: Succesfully created booking
 20/12/28 21:16:47 INFO server.ServerConnectionManager: booking service started running at port : 8081
 20/12/28 21:16:52 INFO handlers.UpdateBookingsHandler: UpdateBookingsHandler called with request: [BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null], BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null]]
+20/12/29 16:52:08 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 16:57:06 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 17:03:30 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 17:03:52 ERROR handlers.CreateBookingsHandler: failed to create booking: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( booking_reference ))' at line 1
+20/12/29 17:04:28 ERROR handlers.CreateBookingsHandler: failed to create booking: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( booking_id ))' at line 1
+20/12/29 17:07:54 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 17:07:54 ERROR handlers.CreateBookingsHandler: failed to create booking: No value specified for parameter 6
+20/12/29 17:12:09 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 17:12:14 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 17:12:14 INFO dao.BookingDAO: Succesfully created booking
+20/12/29 17:15:31 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 17:15:37 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 17:15:38 INFO services.BookingService: Supplier response: (POST http://localhost:8082/supplier/v1/book) 200
+20/12/29 17:18:07 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 17:18:07 INFO services.BookingService: Supplier response: (POST http://localhost:8082/supplier/v1/book) 200
+20/12/29 17:18:50 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 17:18:50 INFO services.BookingService: Supplier response: (POST http://localhost:8082/supplier/v1/book) 200
+20/12/29 17:59:27 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 17:59:35 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 17:59:36 INFO services.BookingService: Supplier response: (POST http://localhost:8082/supplier/v1/book) 200
+20/12/29 18:01:58 ERROR server.ServerConnectionManager: failed to start server : Address already in use
+20/12/29 18:02:06 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 18:02:07 INFO services.BookingService: Supplier response: (POST http://localhost:8082/supplier/v1/book) 200
+20/12/29 18:06:35 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 18:06:41 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 18:06:41 INFO services.BookingService: Supplier response: {
+  "httpStatus" : 201,
+  "bookingInfo" : {
+    "bookingId" : "48b04b60-a3c5-45d2-bbbe-74a1a66ec3a4",
+    "checkInDate" : "2021-01-19T15:08:00.630642",
+    "checkOutDate" : "2021-01-29T15:08:00.630642",
+    "hotelName" : "Paasha",
+    "noOfGuests" : 4,
+    "status" : "CONFIRMED",
+    "bookingReference" : "597c48b9-4fbe-4126-a0e4-1b281d9209e0",
+    "createdOn" : "2020-12-29T18:06:41.063655",
+    "updatedOn" : "2020-12-29T18:06:41.063707"
+  },
+  "errors" : null
+}
+20/12/29 18:36:58 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 18:37:03 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 18:37:04 INFO services.BookingService: Supplier response: {
+  "httpStatus" : 201,
+  "bookingInfo" : {
+    "bookingId" : "d643793e-0a85-44e5-ba3a-12b96987f268",
+    "checkInDate" : "2021-01-19T15:08:00.630642",
+    "checkOutDate" : "2021-01-29T15:08:00.630642",
+    "hotelName" : "Paasha",
+    "noOfGuests" : 4,
+    "status" : "CONFIRMED",
+    "bookingReference" : "ced22405-81bd-4fdd-8568-042d178a6ea2",
+    "createdOn" : "2020-12-29T18:37:03.856493",
+    "updatedOn" : "2020-12-29T18:37:03.856577"
+  },
+  "errors" : null
+}
+20/12/29 18:37:04 INFO services.BookingService: BookingInfo [bookingId=d643793e-0a85-44e5-ba3a-12b96987f268, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=CONFIRMED, bookingReference=ced22405-81bd-4fdd-8568-042d178a6ea2, createdOn=2020-12-29T18:37:03.856493, updatedOn=2020-12-29T18:37:03.856577]
+20/12/29 18:47:13 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 18:47:20 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 18:47:20 INFO dao.BookingDAO: Succesfully created booking
+20/12/29 18:49:59 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 18:49:59 INFO dao.BookingDAO: Succesfully created booking
+20/12/29 18:56:30 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/29 18:56:35 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-19T15:08:00.630642, checkOutDate=2021-01-29T15:08:00.630642, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+20/12/29 18:56:35 INFO services.BookingService: java.net.http.HttpHeaders@7c8710b6 { {content-length=[465], content-type=[appication/json], date=[Tue, 29 Dec 2020 13:26:35 GMT]} }
+20/12/29 18:56:35 INFO dao.BookingDAO: Succesfully created booking
+20/12/30 12:57:13 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 12:59:00 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : null
+20/12/30 13:01:40 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:01:45 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : null
+20/12/30 13:02:29 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:02:34 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : null
+20/12/30 13:02:55 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:03:53 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : null
+20/12/30 13:05:07 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:05:12 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : null
+20/12/30 13:06:37 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:07:37 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:09:15 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:10:34 INFO handlers.FilterBookingsHandler: sucessfully fetched bookings by given criteria
+20/12/30 13:20:07 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:21:41 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:25:06 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:26:33 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:26:51 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : text
+20/12/30 13:29:55 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:34:09 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:38:02 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:42:09 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:45:45 INFO handlers.FilterBookingsHandler: sucessfully fetched bookings by given criteria
+20/12/30 13:45:45 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : Broken pipe
+20/12/30 13:53:37 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 13:54:32 INFO handlers.FilterBookingsHandler: sucessfully fetched bookings by given criteria
+20/12/30 14:04:57 ERROR handlers.FilterBookingsHandler: failed to fetch bookings by given criteria : Unknown column 'CONFIRMED' in 'where clause'
+20/12/30 14:09:45 INFO server.ServerConnectionManager: supplier service started running at port : 8081
+20/12/30 14:10:46 INFO handlers.FilterBookingsHandler: sucessfully fetched bookings by given criteria

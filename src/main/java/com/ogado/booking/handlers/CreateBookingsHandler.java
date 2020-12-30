@@ -37,13 +37,18 @@ public class CreateBookingsHandler implements HttpHandler {
 
 			bookingResponse = new BookingResponse();
 			bookingResponse.setHttpStatus(HTTPStatus.INTERNAL_SERVER_ERROR);
+		} catch (Exception e) {
+			log.error("failed to create booking: "+ e.getMessage());
+
+			bookingResponse = new BookingResponse();
+			bookingResponse.setHttpStatus(HTTPStatus.INTERNAL_SERVER_ERROR);
 		}
 
 		try {
 			String bookingResponseStr = JsonMapper.stringifyPretty(bookingResponse);
 			OutputStream outputStream = httpExchange.getResponseBody();
 			httpExchange.getResponseHeaders().set("Content-Type", "appication/json");
-			httpExchange.sendResponseHeaders(200, bookingResponseStr.length());
+			httpExchange.sendResponseHeaders(HTTPStatus.CREATED, bookingResponseStr.length());
 			outputStream.write(bookingResponseStr.getBytes());
 
 			outputStream.flush();

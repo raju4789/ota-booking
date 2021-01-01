@@ -100,17 +100,6 @@ public class BookingService implements IBookingService {
 	@Override
 	public FilteredBookings filterBookingsByCriteria(String checkInDate, String checkOutDate, String status)
 			throws SQLException {
-		LocalDate date = LocalDate.parse(checkInDate);
-
-		if (date == null) {
-			checkInDate = null;
-		}
-
-		date = LocalDate.parse(checkOutDate);
-
-		if (date == null) {
-			checkOutDate = null;
-		}
 		
 		FilteredBookings filteredBookings = new FilteredBookings();
 		filteredBookings.setHttpStatus(HTTPStatus.OK);

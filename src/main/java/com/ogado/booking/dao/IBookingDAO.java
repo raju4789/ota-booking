@@ -13,7 +13,7 @@ public interface IBookingDAO {
 	
 	public List<BookingInfo> filterBookingsByCheckInDate(String checkInDate) throws SQLException;
 	
-	public void updateBooking(BookingInfo bookingInfo);
+	public void updateBooking(BookingInfo bookingInfo) throws SQLException;
 
 	public BookingInfo getBookingById(String bookingId) throws SQLException;
 

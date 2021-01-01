@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,24 +38,18 @@ public class BookingDAO implements IBookingDAO {
 
 		}
 
-		LocalDateTime checkInDate = LocalDateTime.parse(bookingInfo.getCheckInDate());
-		LocalDateTime checkOutDate = LocalDateTime.parse(bookingInfo.getCheckOutDate());
-
-		LocalDateTime createdOn = LocalDateTime.parse(bookingInfo.getCreatedOn());
-		LocalDateTime updatedOn = LocalDateTime.parse(bookingInfo.getUpdatedOn());
-
 		String insertQuery = bookingQueries.getInsertBooking();
 
 		PreparedStatement stmt = dbConnection.prepareStatement(insertQuery);
 		stmt.setString(1, bookingInfo.getBookingId());
-		stmt.setTimestamp(2, Timestamp.valueOf(checkInDate));
-		stmt.setTimestamp(3, Timestamp.valueOf(checkOutDate));
+		stmt.setString(2, bookingInfo.getCheckInDate());
+		stmt.setString(3, bookingInfo.getCheckOutDate());
 		stmt.setString(4, bookingInfo.getHotelName());
 		stmt.setInt(5, bookingInfo.getNoOfGuests());
 		stmt.setString(6, bookingInfo.getStatus());
 		stmt.setString(7, bookingInfo.getBookingReference());
-		stmt.setTimestamp(8, Timestamp.valueOf(createdOn));
-		stmt.setTimestamp(9, Timestamp.valueOf(updatedOn));
+		stmt.setString(8, bookingInfo.getCreatedOn());
+		stmt.setString(9, bookingInfo.getUpdatedOn());
 
 		int row = stmt.executeUpdate();
 
@@ -90,16 +82,7 @@ public class BookingDAO implements IBookingDAO {
 
 		while (rs.next()) {
 
-			BookingInfo curBooking = new BookingInfo();
-			curBooking.setBookingId(rs.getString("booking_id"));
-			curBooking.setCheckInDate(rs.getTimestamp("check_in_date").toString());
-			curBooking.setCheckOutDate(rs.getTimestamp("check_out_date").toString());
-			curBooking.setHotelName(rs.getString("hotel_name"));
-			curBooking.setNoOfGuests(rs.getInt("no_of_guests"));
-			curBooking.setStatus(rs.getString("status"));
-			curBooking.setBookingReference(rs.getString("booking_reference"));
-			curBooking.setCreatedOn(rs.getTimestamp("created_on").toString());
-			curBooking.setUpdatedOn(rs.getTimestamp("updated_on").toString());
+			BookingInfo curBooking = getBookingFromResultSet(rs);
 
 			filteredQueries.add(curBooking);
 		}
@@ -108,9 +91,30 @@ public class BookingDAO implements IBookingDAO {
 	}
 
 	@Override
-	public void updateBooking(BookingInfo bookingInfo) {
-		// TODO Auto-generated method stub
+	public void updateBooking(BookingInfo bookingInfo) throws SQLException {
 
+		if (dbConnection == null) {
+			log.error("Failed to acquire db connection");
+
+		}
+		PreparedStatement stmt = dbConnection.prepareStatement(bookingQueries.getSelectBooking());
+		stmt.setString(1, bookingInfo.getBookingId());
+
+		ResultSet rs = stmt.executeQuery();
+
+		if (rs.next()) {
+			stmt = dbConnection.prepareStatement(bookingQueries.getUpdateBooking());
+			stmt.setString(1, bookingInfo.getCheckInDate());
+			stmt.setString(2, bookingInfo.getCheckOutDate());
+			stmt.setString(3, bookingInfo.getStatus());
+			stmt.setString(4, bookingInfo.getUpdatedOn());
+			stmt.setString(5, bookingInfo.getBookingId());
+			stmt.executeUpdate();
+		}else {
+			log.error("No booking found with given booking id");
+		}
+
+		stmt.close();
 	}
 
 	@Override
@@ -126,21 +130,33 @@ public class BookingDAO implements IBookingDAO {
 		ResultSet rs = stmt.executeQuery();
 
 		if (rs.next()) {
-			BookingInfo curBooking = new BookingInfo();
-			curBooking.setBookingId(rs.getString("booking_id"));
-			curBooking.setCheckInDate(rs.getTimestamp("check_in_date").toString());
-			curBooking.setCheckOutDate(rs.getTimestamp("check_out_date").toString());
-			curBooking.setHotelName(rs.getString("hotel_name"));
-			curBooking.setNoOfGuests(rs.getInt("no_of_guests"));
-			curBooking.setStatus(rs.getString("status"));
-			curBooking.setBookingReference(rs.getString("booking_reference"));
-			curBooking.setCreatedOn(rs.getTimestamp("created_on").toString());
-			curBooking.setUpdatedOn(rs.getTimestamp("updated_on").toString());
-
-			return curBooking;
+			return getBookingFromResultSet(rs);
 		}
 
 		return null;
+	}
+
+	@Override
+	public List<BookingInfo> filterBookingsByCheckInDate(String checkInDate) throws SQLException {
+		if (dbConnection == null) {
+			log.error("Failed to acquire db connection");
+		}
+
+		String filterQuery = formSearchQueryByCheckInDate(checkInDate);
+
+		Statement stmt = dbConnection.createStatement();
+
+		List<BookingInfo> filteredQueries = new ArrayList<>();
+		ResultSet rs = stmt.executeQuery(filterQuery);
+
+		while (rs.next()) {
+
+			BookingInfo curBooking = getBookingFromResultSet(rs);
+
+			filteredQueries.add(curBooking);
+		}
+
+		return filteredQueries;
 	}
 
 	private void createBookingsTable() throws SQLException {
@@ -168,44 +184,26 @@ public class BookingDAO implements IBookingDAO {
 		return searchQuery;
 	}
 
-	@Override
-	public List<BookingInfo> filterBookingsByCheckInDate(String checkInDate) throws SQLException {
-		if (dbConnection == null) {
-			log.error("Failed to acquire db connection");
-		}
-
-		String filterQuery = formSearchQueryByCheckInDate(checkInDate);
-
-		Statement stmt = dbConnection.createStatement();
-
-		List<BookingInfo> filteredQueries = new ArrayList<>();
-		ResultSet rs = stmt.executeQuery(filterQuery);
-
-		while (rs.next()) {
-
-			BookingInfo curBooking = new BookingInfo();
-			curBooking.setBookingId(rs.getString("booking_id"));
-			curBooking.setCheckInDate(rs.getTimestamp("check_in_date").toString());
-			curBooking.setCheckOutDate(rs.getTimestamp("check_out_date").toString());
-			curBooking.setHotelName(rs.getString("hotel_name"));
-			curBooking.setNoOfGuests(rs.getInt("no_of_guests"));
-			curBooking.setStatus(rs.getString("status"));
-			curBooking.setBookingReference(rs.getString("booking_reference"));
-			curBooking.setCreatedOn(rs.getTimestamp("created_on").toString());
-			curBooking.setUpdatedOn(rs.getTimestamp("updated_on").toString());
-
-			filteredQueries.add(curBooking);
-		}
-
-		return filteredQueries;
-	}
-
 	private String formSearchQueryByCheckInDate(String checkInDate) {
 		String searchQuery = bookingQueries.getFilterBookingsByCheckInDate();
 
 		searchQuery += "DATE('" + checkInDate + "')";
 
 		return searchQuery;
+	}
+	
+	private static BookingInfo getBookingFromResultSet(ResultSet rs) throws SQLException {
+		BookingInfo bookingInfo = new BookingInfo();
+		bookingInfo.setBookingId(rs.getString("booking_id"));
+		bookingInfo.setCheckInDate(rs.getString("check_in_date"));
+		bookingInfo.setCheckOutDate(rs.getString("check_out_date"));
+		bookingInfo.setHotelName(rs.getString("hotel_name"));
+		bookingInfo.setNoOfGuests(rs.getInt("no_of_guests"));
+		bookingInfo.setStatus(rs.getString("status"));
+		bookingInfo.setBookingReference(rs.getString("booking_reference"));
+		bookingInfo.setCreatedOn(rs.getString("created_on"));
+		bookingInfo.setUpdatedOn(rs.getString("updated_on"));
+		return bookingInfo;
 	}
 
 }

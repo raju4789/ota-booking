@@ -10,9 +10,12 @@ public class ApplicationConstants {
 	
 	public static final String CREATE_URI = "/booking/v1/create";
 
-	public static final String BOOKINGS_URI = "/booking/v1/bookings";
+	public static final String FILTER_BOOKINGS_BY_CRITERIA_DATE_URI = "/booking/v1/bookings";
 
 	public static final String AMEND_URI = "/booking/v1/amend";
+	
+	public static final String FILTER_BOOKINGS_BY_CHECKIN_DATE_URI = "/booking/v1/filter";
+
 	
 	public static final String SUPPLIER_BOOKING_URI = "http://localhost:8082/supplier/v1/book";	
 	

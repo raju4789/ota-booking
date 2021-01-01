@@ -7,8 +7,9 @@ import org.apache.log4j.Logger;
 
 import com.ogado.booking.constants.ApplicationConstants;
 import com.ogado.booking.exceptions.ConfigurationException;
+import com.ogado.booking.handlers.CheckinFilterBookingsHandler;
 import com.ogado.booking.handlers.CreateBookingsHandler;
-import com.ogado.booking.handlers.FilterBookingsHandler;
+import com.ogado.booking.handlers.CriteriaFilterBookingsHandler;
 import com.ogado.booking.handlers.UpdateBookingsHandler;
 import com.ogado.booking.utils.ConfigLoader;
 import com.sun.net.httpserver.HttpServer;
@@ -32,10 +33,11 @@ public class ServerConnectionManager {
 	public static void startServer(){
 		try {
 			
-			getHttpServer().createContext(ApplicationConstants.BOOKINGS_URI, new FilterBookingsHandler());
+			getHttpServer().createContext(ApplicationConstants.FILTER_BOOKINGS_BY_CRITERIA_DATE_URI, new CriteriaFilterBookingsHandler());
 			getHttpServer().createContext(ApplicationConstants.AMEND_URI, new UpdateBookingsHandler());
 			getHttpServer().createContext(ApplicationConstants.CREATE_URI, new CreateBookingsHandler());
-
+			
+			getHttpServer().createContext(ApplicationConstants.FILTER_BOOKINGS_BY_CHECKIN_DATE_URI, new CheckinFilterBookingsHandler());
 
 			getHttpServer().start();
 			

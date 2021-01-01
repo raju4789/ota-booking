@@ -75,13 +75,13 @@ public class BookingDAO implements IBookingDAO {
 	}
 
 	@Override
-	public List<BookingInfo> filterBookings(String checkInDate, String checkOutDate, String status)
+	public List<BookingInfo> filterBookingsByCriteria(String checkInDate, String checkOutDate, String status)
 			throws SQLException {
 		if (dbConnection == null) {
 			log.error("Failed to acquire db connection");
 		}
 
-		String filterQuery = formSearchQuery(status, checkInDate, checkOutDate);
+		String filterQuery = formSearchQueryByCriteria(status, checkInDate, checkOutDate);
 
 		Statement stmt = dbConnection.createStatement();
 
@@ -151,8 +151,8 @@ public class BookingDAO implements IBookingDAO {
 		stmt.close();
 	}
 
-	private static String formSearchQuery(String status, String checkInDate, String checkOutDate) {
-		String searchQuery = bookingQueries.getFilterBookings();
+	private static String formSearchQueryByCriteria(String status, String checkInDate, String checkOutDate) {
+		String searchQuery = bookingQueries.getFilterBookingsByCriteria();
 
 		if (status != null) {
 			searchQuery += " AND status = '" + status.toUpperCase() + "'";
@@ -165,6 +165,46 @@ public class BookingDAO implements IBookingDAO {
 		if (checkOutDate != null) {
 			searchQuery += " AND DATE(check_in_date) = DATE('" + checkOutDate + "')";
 		}
+		return searchQuery;
+	}
+
+	@Override
+	public List<BookingInfo> filterBookingsByCheckInDate(String checkInDate) throws SQLException {
+		if (dbConnection == null) {
+			log.error("Failed to acquire db connection");
+		}
+
+		String filterQuery = formSearchQueryByCheckInDate(checkInDate);
+
+		Statement stmt = dbConnection.createStatement();
+
+		List<BookingInfo> filteredQueries = new ArrayList<>();
+		ResultSet rs = stmt.executeQuery(filterQuery);
+
+		while (rs.next()) {
+
+			BookingInfo curBooking = new BookingInfo();
+			curBooking.setBookingId(rs.getString("booking_id"));
+			curBooking.setCheckInDate(rs.getTimestamp("check_in_date").toString());
+			curBooking.setCheckOutDate(rs.getTimestamp("check_out_date").toString());
+			curBooking.setHotelName(rs.getString("hotel_name"));
+			curBooking.setNoOfGuests(rs.getInt("no_of_guests"));
+			curBooking.setStatus(rs.getString("status"));
+			curBooking.setBookingReference(rs.getString("booking_reference"));
+			curBooking.setCreatedOn(rs.getTimestamp("created_on").toString());
+			curBooking.setUpdatedOn(rs.getTimestamp("updated_on").toString());
+
+			filteredQueries.add(curBooking);
+		}
+
+		return filteredQueries;
+	}
+
+	private String formSearchQueryByCheckInDate(String checkInDate) {
+		String searchQuery = bookingQueries.getFilterBookingsByCheckInDate();
+
+		searchQuery += "DATE('" + checkInDate + "')";
+
 		return searchQuery;
 	}
 

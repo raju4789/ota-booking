@@ -17,6 +17,7 @@ import com.ogado.booking.dao.IBookingDAO;
 import com.ogado.booking.exceptions.ConfigurationException;
 import com.ogado.booking.models.BookingInfo;
 import com.ogado.booking.models.BookingResponse;
+import com.ogado.booking.models.FilteredBookings;
 import com.ogado.booking.models.SupplierResponse;
 import com.ogado.booking.utils.APIValidationUtil;
 import com.ogado.booking.utils.JsonMapper;
@@ -97,7 +98,7 @@ public class BookingService implements IBookingService {
 	}
 
 	@Override
-	public List<BookingInfo> filterBookings(String checkInDate, String checkOutDate, String status)
+	public FilteredBookings filterBookingsByCriteria(String checkInDate, String checkOutDate, String status)
 			throws SQLException {
 		LocalDate date = LocalDate.parse(checkInDate);
 
@@ -110,8 +111,12 @@ public class BookingService implements IBookingService {
 		if (date == null) {
 			checkOutDate = null;
 		}
+		
+		FilteredBookings filteredBookings = new FilteredBookings();
+		filteredBookings.setHttpStatus(HTTPStatus.OK);
+		filteredBookings.setBookings(bookingDAO.filterBookingsByCriteria(checkInDate, checkOutDate, status));
 
-		return bookingDAO.filterBookings(checkInDate, checkOutDate, status);
+		return filteredBookings;
 	}
 
 	@Override
@@ -120,6 +125,21 @@ public class BookingService implements IBookingService {
 
 	}
 
+	@Override
+	public FilteredBookings filterBookingsByCheckInDate(String checkInDate) throws SQLException {
+		LocalDate date = LocalDate.parse(checkInDate);
+		FilteredBookings filteredBookings = new FilteredBookings();
+		
+		if (date == null) {
+			filteredBookings.setHttpStatus(HTTPStatus.BAD_REQUEST);
+			filteredBookings.setErrorMessage("checkin date is not valid.");
+		}
+		
+		filteredBookings.setHttpStatus(HTTPStatus.OK);
+		filteredBookings.setBookings(bookingDAO.filterBookingsByCheckInDate(checkInDate));
+		return filteredBookings;
+	}
+	
 	private BookingInfo storeInSupplier(BookingInfo bookingInfo) throws Exception {
 		String requestBody = JsonMapper.stringifyPretty(bookingInfo);
 		HttpResponse<String> res = ClientConnectionManager.post(ApplicationConstants.SUPPLIER_BOOKING_URI, requestBody);
@@ -132,5 +152,6 @@ public class BookingService implements IBookingService {
 		return null;
 
 	}
+
 
 }

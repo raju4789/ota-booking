@@ -9,10 +9,12 @@ public interface IBookingDAO {
 	
 	public BookingInfo saveBooking(BookingInfo bookingInfo) throws SQLException;
 	
-	public List<BookingInfo> filterBookings(String checkInDate, String checkOutDate, String status) throws SQLException;
+	public List<BookingInfo> filterBookingsByCriteria(String checkInDate, String checkOutDate, String status) throws SQLException;
+	
+	public List<BookingInfo> filterBookingsByCheckInDate(String checkInDate) throws SQLException;
 	
 	public void updateBooking(BookingInfo bookingInfo);
 
-	BookingInfo getBookingById(String bookingId) throws SQLException;
+	public BookingInfo getBookingById(String bookingId) throws SQLException;
 
 }

@@ -17,7 +17,7 @@ public class ApplicationConstants {
 	public static final String FILTER_BOOKINGS_BY_CHECKIN_DATE_URI = "/booking/v1/filter";
 
 	
-	public static final String SUPPLIER_BOOKING_URI = "http://localhost:8082/supplier/v1/book";	
+	public static final String SUPPLIER_BOOKING_URI = "http://ota-supplier:8082/supplier/v1/book";	
 	
 	public static final String STATUS_CONFIRMED  = "CONFIRMED";
 	public static final String STATUS_CANCELED  = "CANCELED";

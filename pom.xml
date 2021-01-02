@@ -43,16 +43,11 @@
 	<build>
 		<plugins>
 			<plugin>
-				<!-- Build an executable JAR -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.0</version>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
 				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>com.ogado.booking.BookingApplication</mainClass>
-						</manifest>
-					</archive>
+					<mainClass>com.ogado.booking.BookingApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

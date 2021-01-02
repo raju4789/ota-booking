@@ -1,16 +1,18 @@
 package com.ogado.booking.handlers;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.sql.SQLException;
-import java.util.List;
 
 import org.apache.log4j.Logger;
 
 import com.ogado.booking.constants.HTTPStatus;
 import com.ogado.booking.exceptions.ConfigurationException;
-import com.ogado.booking.models.BookingInfo;
 import com.ogado.booking.models.BookingResponse;
+import com.ogado.booking.models.FilteredBookings;
 import com.ogado.booking.services.BookingService;
 import com.ogado.booking.services.IBookingService;
 import com.ogado.booking.utils.JsonMapper;
@@ -25,11 +27,16 @@ public class UpdateBookingsHandler implements HttpHandler {
 		BookingResponse bookingResponse = null;
 		try {
 			IBookingService bookingService = new BookingService();
-			List<BookingInfo> bookings = JsonMapper.parseList(httpExchange.getRequestBody(), BookingInfo.class);
+			FilteredBookings filteredBookings = getRequestObject(httpExchange.getRequestBody());
 			
-			log.info("UpdateBookingsHandler called with request: "+ bookings);
+			if(HTTPStatus.OK != filteredBookings.getHttpStatus()) {
+				log.error("");
+				return;
+			}
+			
+			log.info("UpdateBookingsHandler called with request: "+ filteredBookings.getBookings());
 
-			//bookingService.amendBooking(bookings);
+			bookingService.amendBooking(filteredBookings.getBookings());
 		} catch (IOException | ConfigurationException | SQLException e) {
 			log.error("failed to update bookings: "+ e.getMessage());
 
@@ -51,6 +58,20 @@ public class UpdateBookingsHandler implements HttpHandler {
 			log.error("failed to send response: "+ e.getMessage());
 		}
 	}
+	
+	private FilteredBookings getRequestObject(InputStream inputStream) throws IOException {
+
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+		StringBuffer sb = new StringBuffer();
+		String line;
+		while ((line = bufferedReader.readLine()) != null) {
+			sb.append(line);
+		}
+
+		return JsonMapper.parse(sb.toString(), FilteredBookings.class);
+
+	}
+
 	
 	
 

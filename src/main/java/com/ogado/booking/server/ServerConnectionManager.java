@@ -43,7 +43,7 @@ public class ServerConnectionManager {
 			
 			String[] temp = httpServer.getAddress().toString().split(":");
 			String portNumber = temp[temp.length-1];
-			log.info("supplier service started running at port : " + portNumber);
+			log.info("bookings service started running at port : " + portNumber);
 
 		} catch (ConfigurationException | IOException e) {
 			log.error("failed to start server : " + e.getMessage());

@@ -13,7 +13,7 @@ public interface IBookingService {
 	
 	public FilteredBookings filterBookingsByCheckInDate(String checkInDate) throws SQLException;
 	
-	public void amendBooking(List<BookingInfo> bookingInfo);
+	public void amendBooking(List<BookingInfo> bookingInfo) throws SQLException;
 
 	public FilteredBookings filterBookingsByCriteria(String checkInDate, String checkOutDate, String status) throws SQLException;
 

@@ -1,6 +1,7 @@
 package com.ogado.booking.utils;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,16 +12,17 @@ public class APIValidationUtil {
 	public static List<String> validateRequest(BookingInfo bookingInfo) {
 		
 		List<String> errors = new ArrayList<String>();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
 
 		if (bookingInfo.getCheckInDate() == null) {
 			errors.add("checkInDate is mandatory");
 		}else {
-			if(LocalDateTime.parse(bookingInfo.getCheckInDate()).isBefore(LocalDateTime.now())) {
+			if(LocalDateTime.parse(bookingInfo.getCheckInDate(), formatter).isBefore(LocalDateTime.now())) {
 				errors.add("checkInDate can't be less than current date");
 			}
 		}
 		
-		if(LocalDateTime.parse(bookingInfo.getCheckOutDate()).isBefore(LocalDateTime.parse(bookingInfo.getCheckInDate()))) {
+		if(LocalDateTime.parse(bookingInfo.getCheckOutDate(), formatter).isBefore(LocalDateTime.parse(bookingInfo.getCheckInDate(), formatter))) {
 			errors.add("checkOutDate can't be less than checkInDate");
 		}
 

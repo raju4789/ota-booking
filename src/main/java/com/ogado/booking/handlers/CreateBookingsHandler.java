@@ -5,12 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
 import com.ogado.booking.constants.HTTPStatus;
-import com.ogado.booking.exceptions.ConfigurationException;
 import com.ogado.booking.models.BookingInfo;
 import com.ogado.booking.models.BookingResponse;
 import com.ogado.booking.services.BookingService;
@@ -32,13 +30,9 @@ public class CreateBookingsHandler implements HttpHandler {
 			log.info("createBookingsHandler called with request: "+ bookingInfo);
 
 			bookingResponse = bookingService.createBooking(bookingInfo);
-		} catch (IOException | ConfigurationException | SQLException e) {
-			log.error("failed to create booking: "+ e.getMessage());
-
-			bookingResponse = new BookingResponse();
-			bookingResponse.setHttpStatus(HTTPStatus.INTERNAL_SERVER_ERROR);
 		} catch (Exception e) {
 			log.error("failed to create booking: "+ e.getMessage());
+			e.printStackTrace();
 
 			bookingResponse = new BookingResponse();
 			bookingResponse.setHttpStatus(HTTPStatus.INTERNAL_SERVER_ERROR);

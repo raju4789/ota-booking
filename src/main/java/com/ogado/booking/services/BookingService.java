@@ -109,8 +109,11 @@ public class BookingService implements IBookingService {
 	}
 
 	@Override
-	public void amendBooking(List<BookingInfo> bookingInfo) {
-		// TODO Auto-generated method stub
+	public void amendBooking(List<BookingInfo> bookings) throws SQLException {
+		for (BookingInfo bookingInfo : bookings) {
+			bookingInfo.setUpdatedOn(LocalDateTime.now().toString());
+			bookingDAO.updateBooking(bookingInfo);
+		}
 
 	}
 

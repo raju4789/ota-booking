@@ -1,7 +1,7 @@
 {
-	"createBookingTable": "CREATE TABLE IF NOT EXISTS ogado_bookings (booking_id VARCHAR(50) NOT NULL, check_in_date DATETIME, check_out_date DATETIME, hotel_name VARCHAR(50), no_of_guests INTEGER, status VARCHAR(10), booking_reference VARCHAR(50), created_on DATETIME, updated_on DATETIME, PRIMARY KEY ( booking_id ))",
+	"createBookingTable": "CREATE TABLE IF NOT EXISTS ogado_bookings (booking_id VARCHAR(50) NOT NULL, check_in_date VARCHAR(50), check_out_date VARCHAR(50), hotel_name VARCHAR(50), no_of_guests INTEGER, status VARCHAR(10), booking_reference VARCHAR(50), created_on DATETIME, updated_on DATETIME, PRIMARY KEY ( booking_id ))",
 	"insertBooking": "INSERT INTO ogado_bookings(booking_id, check_in_date, check_out_date, hotel_name, no_of_guests, status, booking_reference, created_on, updated_on) VALUES(?,?,?,?,?,?,?,?,?)",
-	"updateBooking": "UPDATE supplier_bookings SET check_in_date = ?, check_out_date = ?, status = ?, updated_on = ? WHERE booking_id = ?",
+	"updateBooking": "UPDATE ogado_bookings SET check_in_date = ?, check_out_date = ?, status = ?, updated_on = ? WHERE booking_id = ?",
 	"selectBooking": "SELECT * FROM ogado_bookings WHERE booking_id = ?",
 	"filterBookingsByCriteria": "SELECT * FROM ogado_bookings WHERE 1 = 1",
 	"filterBookingsByCheckInDate": "SELECT * FROM ogado_bookings WHERE DATE(check_in_date) >= "

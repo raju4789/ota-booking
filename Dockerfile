@@ -15,4 +15,4 @@ RUN mvn package
 
 EXPOSE 8081
 
-ENTRYPOINT mvn exec:java
+ENTRYPOINT mvn exec:java -Denv=prod

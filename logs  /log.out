@@ -885,3 +885,29 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 21/01/02 12:05:49 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
 21/01/02 12:05:59 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
 21/01/02 12:06:09 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/03 10:37:03 ERROR server.ServerConnectionManager: failed to start server : Address already in use
+21/01/03 10:38:37 INFO server.ServerConnectionManager: bookings service started running at port : 8081
+21/01/03 10:41:30 ERROR db.DBConnectionManager: Failed to connect to db : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+21/01/03 10:41:30 ERROR handlers.CreateBookingsHandler: failed to create booking: null
+21/01/03 10:43:12 INFO server.ServerConnectionManager: bookings service started running at port : 8081
+21/01/03 10:44:18 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-01-10 15:08:01, checkOutDate=2021-01-12 15:08:01, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+21/01/03 10:44:18 INFO dao.BookingDAO: Succesfully created booking
+21/01/03 10:45:17 INFO server.ServerConnectionManager: bookings service started running at port : 8081
+21/01/03 10:45:36 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-03-10 15:08:01, checkOutDate=2021-03-12 15:08:01, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+21/01/03 10:45:36 INFO services.BookingService: System environment : src/main/resources/DEV_API_URL.json
+21/01/03 10:45:36 INFO dao.BookingDAO: Succesfully created booking
+21/01/03 11:30:51 INFO server.ServerConnectionManager: bookings service started running at port : 8081
+21/01/03 11:31:52 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-05-10 15:08:01, checkOutDate=2021-05-12 15:08:01, hotelName=Paasha, noOfGuests=4, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+21/01/03 11:31:52 INFO dao.BookingDAO: Succesfully created booking
+21/01/03 11:34:05 INFO handlers.CriteriaFilterBookingsHandler: successfully fetched bookings by given criteria
+21/01/03 11:34:29 INFO handlers.CriteriaFilterBookingsHandler: successfully fetched bookings by given criteria
+21/01/03 11:35:01 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/03 11:43:11 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/03 11:43:12 INFO handlers.UpdateBookingsHandler: UpdateBookingsHandler called with request: [BookingInfo [bookingId=06089880-f91d-4e89-8c9a-5d7060282754, checkInDate=2021-04-01 15:08:01, checkOutDate=2021-04-05 15:08:01, hotelName=null, noOfGuests=0, status=CANCELED, bookingReference=43f83a20-0c12-4ce5-8e6d-f0569e5df4f9, createdOn=null, updatedOn=null], BookingInfo [bookingId=71bd52dc-31da-4647-8883-11f717d09a7a, checkInDate=2021-01-10 15:08:01, checkOutDate=2021-01-12 15:08:01, hotelName=null, noOfGuests=0, status=CANCELED, bookingReference=24ff6f21-85c7-4a70-be29-723699e0aa32, createdOn=null, updatedOn=null], BookingInfo [bookingId=984e47bf-49c3-4285-9bb4-642f9a90e6f4, checkInDate=2021-03-10 15:08:01, checkOutDate=2021-03-12 15:08:01, hotelName=null, noOfGuests=0, status=CANCELED, bookingReference=c131df9f-dd89-49d9-9a6b-3ec442df925b, createdOn=null, updatedOn=null]]
+21/01/03 11:43:17 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/03 11:43:23 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/03 11:43:29 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/03 11:43:35 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/03 11:43:41 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria

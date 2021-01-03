@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import org.apache.log4j.Logger;
 
+import com.ogado.booking.client.APIURL;
 import com.ogado.booking.client.ClientConnectionManager;
 import com.ogado.booking.constants.ApplicationConstants;
 import com.ogado.booking.constants.HTTPStatus;
@@ -20,6 +21,7 @@ import com.ogado.booking.models.BookingResponse;
 import com.ogado.booking.models.FilteredBookings;
 import com.ogado.booking.models.SupplierResponse;
 import com.ogado.booking.utils.APIValidationUtil;
+import com.ogado.booking.utils.ConfigLoader;
 import com.ogado.booking.utils.JsonMapper;
 
 public class BookingService implements IBookingService {
@@ -134,7 +136,10 @@ public class BookingService implements IBookingService {
 	
 	private BookingInfo storeInSupplier(BookingInfo bookingInfo) throws Exception {
 		String requestBody = JsonMapper.stringifyPretty(bookingInfo);
-		HttpResponse<String> res = ClientConnectionManager.post(ApplicationConstants.SUPPLIER_BOOKING_URI, requestBody);
+		
+		APIURL apiURls = ConfigLoader.loadConfiguration(ApplicationConstants.ENV_API_URLS.get(System.getProperty("env")), APIURL.class);
+
+		HttpResponse<String> res = ClientConnectionManager.post(apiURls.getSupplierBookingURL(), requestBody);
 		SupplierResponse supplierResponse = JsonMapper.parse(res.body(), SupplierResponse.class);
 
 		if (supplierResponse != null) {

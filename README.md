@@ -83,7 +83,7 @@ booking information contains all data from that booking.
 
 }
 
-### 3. POST:  http://localhost:8081/booking/v1/amend: 
+### 3. PUT:  http://localhost:8081/booking/v1/amend: 
 
 It takes a booking id, check-in and check-out dates, a status (which can be CONFIRMED or CANCELED) and update the booking information in the database accordingly.
 

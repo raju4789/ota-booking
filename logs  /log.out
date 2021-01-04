@@ -911,3 +911,86 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 21/01/03 11:43:29 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
 21/01/03 11:43:35 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
 21/01/03 11:43:41 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:43:42 INFO server.ServerConnectionManager: bookings service started running at port : 8081
+21/01/04 09:44:18 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:44:23 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:44:29 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:44:35 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:44:40 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-02-07 07:08:01, checkOutDate=2021-02-11 15:08:01, hotelName=Paasha, noOfGuests=2, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+21/01/04 09:44:41 INFO dao.BookingDAO: Succesfully created booking
+21/01/04 09:44:41 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:44:47 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:44:47 INFO handlers.UpdateBookingsHandler: UpdateBookingsHandler called
+21/01/04 09:44:53 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:44:59 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:05 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:11 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:17 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:23 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:29 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:35 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:41 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:47 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:53 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:45:59 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:05 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:11 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:17 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:23 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:29 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:35 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:41 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:47 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:53 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:46:59 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:47:05 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:47:11 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:47:17 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:47:23 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:47:29 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:47:35 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:47:42 ERROR server.ServerConnectionManager: failed to start server : Address already in use
+21/01/04 09:48:25 ERROR server.ServerConnectionManager: failed to start server : Address already in use
+21/01/04 09:48:46 INFO server.ServerConnectionManager: bookings service started running at port : 8081
+21/01/04 09:48:58 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:03 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:09 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:15 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:21 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:27 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:33 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:39 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:45 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:51 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:49:57 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:03 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:09 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:10 INFO handlers.CreateBookingsHandler: createBookingsHandler called with request: BookingInfo [bookingId=null, checkInDate=2021-03-09 07:08:01, checkOutDate=2021-03-11 15:08:01, hotelName=Paasha, noOfGuests=2, status=null, bookingReference=null, createdOn=null, updatedOn=null]
+21/01/04 09:50:10 INFO dao.BookingDAO: Succesfully created booking
+21/01/04 09:50:15 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:21 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:21 INFO handlers.UpdateBookingsHandler: UpdateBookingsHandler called
+21/01/04 09:50:27 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:33 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:39 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:45 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:51 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:50:57 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:03 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:09 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:15 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:21 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:27 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:33 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:39 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:45 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:51 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:51:57 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:03 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:09 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:15 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:21 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:27 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:33 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:39 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria
+21/01/04 09:52:45 INFO handlers.CriteriaFilterBookingsHandler: sucessfully fetched bookings by given criteria

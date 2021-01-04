@@ -4,6 +4,6 @@
 	"updateBooking": "UPDATE ogado_bookings SET check_in_date = ?, check_out_date = ?, status = ?, updated_on = ? WHERE booking_id = ?",
 	"selectBooking": "SELECT * FROM ogado_bookings WHERE booking_id = ?",
 	"filterBookingsByCriteria": "SELECT * FROM ogado_bookings WHERE 1 = 1",
-	"filterBookingsByCheckInDate": "SELECT * FROM ogado_bookings WHERE DATE(check_in_date) >= "
+	"filterBookingsByCheckInDate": "SELECT * FROM ogado_bookings WHERE status = 'CONFIRMED' AND DATE(check_in_date) >= "
 }
 

@@ -21,7 +21,7 @@ public class CriteriaFilterBookingsHandler implements HttpHandler {
 
 
 	public void handle(HttpExchange httpExchange) throws IOException {
-		
+
 		FilteredBookings filteredBookings = new FilteredBookings();
 		try {
 			IBookingService bookingService = new BookingService();
@@ -30,7 +30,6 @@ public class CriteriaFilterBookingsHandler implements HttpHandler {
 			String checkInDate = queryParams.get("check_in_date");
 			String checkOutDate = queryParams.get("check_out_date");
 			String status = queryParams.get("status");
-			
 			filteredBookings = bookingService.filterBookingsByCriteria(checkInDate, checkOutDate, status);
 			
 			log.info("successfully fetched bookings by given criteria");
@@ -45,7 +44,7 @@ public class CriteriaFilterBookingsHandler implements HttpHandler {
 			String bookingsStr = JsonMapper.stringifyPretty(filteredBookings);
 			OutputStream outputStream = httpExchange.getResponseBody();
 			httpExchange.getResponseHeaders().set("Content-Type", "appication/json");
-			httpExchange.sendResponseHeaders(HTTPStatus.OK, bookingsStr.length());
+			httpExchange.sendResponseHeaders(filteredBookings.getHttpStatus(), bookingsStr.length());
 			outputStream.write(bookingsStr.getBytes());
 
 			outputStream.flush();

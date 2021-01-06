@@ -41,7 +41,7 @@ public class UpdateBookingsHandler implements HttpHandler {
 			String bookingResponseStr = JsonMapper.stringifyPretty(bookingResponse);
 			OutputStream outputStream = httpExchange.getResponseBody();
 			httpExchange.getResponseHeaders().set("Content-Type", "appication/json");
-			httpExchange.sendResponseHeaders(200, bookingResponseStr.length());
+			httpExchange.sendResponseHeaders(bookingResponse.getHttpStatus(), bookingResponseStr.length());
 			outputStream.write(bookingResponseStr.getBytes());
 
 			outputStream.flush();

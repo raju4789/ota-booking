@@ -23,12 +23,12 @@ public class CreateBookingsHandler implements HttpHandler {
 
 	public void handle(HttpExchange httpExchange) {
 		BookingResponse bookingResponse = null;
+
 		try {
 			IBookingService bookingService = new BookingService();
 			BookingInfo bookingInfo = getRequestObject(httpExchange.getRequestBody());
 			
 			log.info("createBookingsHandler called with request: "+ bookingInfo);
-
 			bookingResponse = bookingService.createBooking(bookingInfo);
 		} catch (Exception e) {
 			log.error("failed to create booking: "+ e.getMessage());
@@ -42,7 +42,7 @@ public class CreateBookingsHandler implements HttpHandler {
 			String bookingResponseStr = JsonMapper.stringifyPretty(bookingResponse);
 			OutputStream outputStream = httpExchange.getResponseBody();
 			httpExchange.getResponseHeaders().set("Content-Type", "appication/json");
-			httpExchange.sendResponseHeaders(HTTPStatus.CREATED, bookingResponseStr.length());
+			httpExchange.sendResponseHeaders(bookingResponse.getHttpStatus(), bookingResponseStr.length());
 			outputStream.write(bookingResponseStr.getBytes());
 
 			outputStream.flush();
